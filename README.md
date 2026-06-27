@@ -1,4 +1,5 @@
 //Beginning notes to consider.
+<<<<<<< HEAD
 -so far, I have learned that the python is command line itself, that is to say, for the small code , there is no need to write code is a saved file . instead, you can directly run python in terminal by writing python is command line ,and then run what you want like >python helloworld.py
 or let's say >python print ("hello world")
 
@@ -15,3 +16,7 @@ Secondly, The # is used for in-line documentation for improving codes readabilit
 * variables do not need to be of any data type, you can even change the data type you assign to it . However, you can also specify the data type you want your variable to hold by using casting ,method for e.x x=str(3) which is same as '3', or let's say y=int(5) this implies that variable y will store only integers values.
  
  *  
+=======
+-so far, I have learned that the python is command line itself, that is to say, for the small code , there is no need to write code in a saved file . instead, you can directly run python in terminal by writing python is command line ,and then run what you want like >python helloworld.py
+or let's say >python print ("hello world")
+>>>>>>> afff2ffa69d93cb6357c7f7691baec2365bd0abe
