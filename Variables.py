@@ -142,5 +142,72 @@ print(td.split(',')) #This returns a list containing the words in the string, us
 a="Hello"
 b=" my engineer Jean !"
 print(a+b+",are you ready to learn python programming ?") #this is known as concatenation of strings, it will join the two strings together and print them as one string
---------------------------------------------------------'''
+--------------------------------------------------------
+
+#Formatting strings  //we use format() method to format strings in python
+age=36
+name="John"
+print(f"My name is {name} and I am {age} years old. how about you?") #this is known as f-string formatting, it will replace the variables with their values and print them as one string
+
+#placeholder and modifiers
+age=26
+calweight=70.789
+print(f" I am {age} years old and my weight is {calweight:.2f} kg") #this is known as f-string formatting, it will replace the variables with their values and print them as one string, the modifier .2f will round the value of calweight to 2 decimal places
+
+-----------------------------------------------------------------------------------
+
+#escape characters :are used to insert characters that are illegal in a string, for example, if you want to insert a double quote in a string that is defined by double quotes, you can use the escape character \ to escape the double quote.
+y="we are learning \"python\" programming to enhance our programming skills."
+print(y) #this will print the string y with the double quotes around the word "python"
+print(y.count("python")) #this will count the number of times the word "python" appears in the string y
+print(y.find("python")) #this will return the index of the first occurrence of the word "python" in the string y
+print(y.encode()) # this will encode the string y into bytes using the default encoding (utf-8)
+
+--------------------------------------------------------------
+
+#Boolean 
+def myBool():
+    x=10
+    y=20
+    if x>y:
+        return True
+    else:
+        return False
+
+if myBool():
+    print("x is greater than y")
+else:
+    print("x is not greater than y")
+    
+
+#Ternary operator in python
+x=3;
+y="friday" if x==5 else "saturday" if x==6 else  "wednesday" if x==3 else "sunday"
+print(y) 
+--------------------------------------------------------------
+#Testing bitwise operators in python
+x=64
+y=16
+z=4
+print(16<<2) #bits manupulation i.e shift by 2 bits to the left , same as multiplying by 2^2=4, so 16*4=64
+print(64>>2) #bits manipulation i.e shift by 2 bits to the  right, same as dividing by 2^2  i.e (n>>x)=n/t where t=2^x
+
+--------------------------------------------------------------------'''
+
+mylist=["Kamana","Kankwanzi","Rumanzi","Manzi"]
+#print(mylist.count("Manzi"))
+mylist[1]="Kweza"
+mylist.append("Mwiza")
+mylist.remove(mylist[1])
+print(mylist)#observed that lists are ordered and mutable/i.e changeable i.e you can add,edit, remove a data
+
+mytuple=("year","month","day")
+print(mytuple) #obeserved that the tuples are ordered(indexing) however, they are not mutable i.e you can't change anything once created, it's kind of ROM, uses cases:  GPS location (lat,long),  time and date format (yy:mm:dd),etc, basically , use tuples for fixed data type.
+
+#sets: sets are allows only unique elements i.e. it has no duplicate elements like a list, let's say we wantto build an application to tell us types of devices connected to the wi-fi, here we might have laptop,laptop,phone,TV,  so the set will show {laptop,phone,TV}
+#sets are useful when you want to work on IDS, MAC IDS, students IDs,IP Addresses.
+
+
+
+
 
