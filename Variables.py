@@ -192,7 +192,6 @@ z=4
 print(16<<2) #bits manupulation i.e shift by 2 bits to the left , same as multiplying by 2^2=4, so 16*4=64
 print(64>>2) #bits manipulation i.e shift by 2 bits to the  right, same as dividing by 2^2  i.e (n>>x)=n/t where t=2^x
 
---------------------------------------------------------------------'''
 
 mylist=["Kamana","Kankwanzi","Rumanzi","Manzi"]
 #print(mylist.count("Manzi"))
@@ -208,6 +207,93 @@ print(mytuple) #obeserved that the tuples are ordered(indexing) however, they ar
 #sets are useful when you want to work on IDS, MAC IDS, students IDs,IP Addresses.
 
 
+#adding and removing items in a list
+myData=["coz","miz","tiz","poc","jaz"]
+myData[1:3]=["mit","fake"]
+myData.insert(2,"Clever")
+myData.append("Turye")
+myData.insert(1,"orange")
+print(myData)
+
+#extending/ all adding the elements of two Lists together
+myPoints=["elec","magnetic","champ"]
+myPoints.extend(myData)
+print(myPoints)
+#you can remove an element from the List using remove()
+myPoints.remove("jaz")
+print(myPoints)
+
+#we can use pop() when we want to remove an element based on the index.
+myPoints.pop(1)
+myPoints.pop()#if you do not specify the index, it automatically removes the last item in the List
+print(myPoints)
+ #we can use del keyword to delete either the item at specified index or delete whole list.
+del myPoints[1]#will delete item at index 1 in the myPoints list
+#del myPoints #completely delete a list and it's different from clearing the list, this act delete even variable
+myPoints.clear() #this one flushes the list but doesn't delete it
+print(myPoints)
+
+--------------------------------------------------------------------'''
+#Looping through the List
+
+mem=[24, 45, 67, 89, 70]
+"""for i in mem:
+    if i==67:
+        print("I've got 67 in the list")
+    else:
+        print("")
+print("done")
+------------------------------------------------------------
 
 
+#Alternatively, you can use while loop
 
+i=0
+while i<(len(mem)):
+    if mem[i]==67:
+        print("I 've got 67 in the list")
+    else:
+        print("")
+    i+=1
+---------------------------------------------------------------------------"""
+#List comprehension: the way you can create a new list based on other list e.g you have fruits list and you want
+#a new list of fruits cona with letter 'a' from the existing list
+
+myFruits=["apple","melon","banana","passion","papaya","dmelon","peanaple"]
+"""newList=[]
+
+for i in myFruits:
+    if "a" in i:
+        newList.append(i)
+print(newList)
+#the above example was using for loop with conditional test inside, now, we need to use the List comprehension to show how it uses only one line to do that
+newList=[x for x in myFruits if 'a' in x]  #this is a know as a list comprehension
+print(newList) 
+-------------------------------------------------------------------
+
+#second example about selecting only even numbers from list of many numbers using List Comprehension
+myDatx=[2,57,8,90,68,47,28,59,93]
+newDatx=[x for x in myDatx if x%2==0]
+print(newDatx)
+--------------------------------------------------
+#Sorting in the list using sort()
+myPeople=["Akimana","Latifa","Keza","Amina","aior","Abdoul"]
+#myPeople.sort()#sort based on alphebetical letters(with Capital letter being treated with higher priority).
+myPeople.sort(key=str.lower)
+print(myPeople)
+
+mych=[3,1,2]
+mych.sort(reverse=True)
+print(mych)
+-----------------------------------------------------
+#copying the List using copy() or list() method.,
+#you can just copy list by saying list2=list1 because, in this way, whatever changed from list1 will be eqaully changed in list2 as list2 reference to list1
+
+myList=[2,8,5,7]
+#newList=myList.copy()#using a copy method
+newList=list(myList)#using a list()
+newList=myList[:]#using : operator.
+print(newList)
+----------------------------------------------------"""
+
+#Joing the two or more Lists, you can join the Lists using
