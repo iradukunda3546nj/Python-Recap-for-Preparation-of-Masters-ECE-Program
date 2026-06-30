@@ -294,6 +294,12 @@ myList=[2,8,5,7]
 newList=list(myList)#using a list()
 newList=myList[:]#using : operator.
 print(newList)
+
+#Joing the two or more Lists, you can join the Lists using "+" , extend()
+list1=[1,2,3,4,5,6,7,8,8,9,9]
+list2=[9,8,7,6,5,4,3,2,1]
+#newList=list1+list2 #joining list using '+' operator
+newList=list1.extend(list2)
+print(newList)
 ----------------------------------------------------"""
 
-#Joing the two or more Lists, you can join the Lists using
