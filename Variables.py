@@ -301,5 +301,64 @@ list2=[9,8,7,6,5,4,3,2,1]
 #newList=list1+list2 #joining list using '+' operator
 newList=list1.extend(list2)
 print(newList)
-----------------------------------------------------"""
+----------------------------------------------------
 
+mylist = ['apple', 'banana', 'cherry']
+mylist[1:2] = ['kiwi', 'mango']
+print(mylist[2])  #from exercises, this prints the "mango""
+
+-------------------------------------------------------
+
+[print(x) for x in ['apple', 'banana', 'cherry']] #other way of printing the list using list comprehension, this is known as a one liner code
+
+---------------------------------------------------------
+
+#Tuples: Tuples are used to store multiple items in a single variable, they are ordered and unchangeable (immutable), and allow duplicate values. Tuples are written with round brackets ().
+myTuple=("apple","banana","cherry")
+print(myTuple)
+#if the tuple has only one item, you have to add a comma after the item, otherwise it will not be recognized as a tuple.
+myTuple1=("apple",)
+print(myTuple1)
+#checking if the element exists in the tuple
+if "apple" in myTuple:
+    print("Yes, 'apple' is in the tuple")
+#updating tuples: you cannot change the values of a tuple, but you can convert it to a list, change the values, and convert it back to a tuple.
+myTuple2=("apple","banana","cherry")
+tupUpdate=list(myTuple2)
+tupUpdate[1] = "kiwi"
+myTuple2=tuple(tupUpdate)
+print(myTuple2)#tuple is now updated with the new value "kiwi" instead of "banana"
+#you can also add or remove items from a tuple by converting it to a list, adding or removing the items, and converting it back to a tuple.
+#you can also add items to a tuple by concatenating two tuples together.
+myTuple3=("apple","banana","cherry")
+myTuple4=("date","elderberry")
+myTuple3=myTuple3+myTuple4
+print(myTuple3)#this will print the new tuple with the added items from myTuple4
+
+#Unapacking a tuple: when we create a tuple, we normally assign values to it. This is called "packing" a tuple. But, in Python, we are also allowed to extract the values back into variables. This is called "unpacking".
+myTuple5=("apple","banana","cherry")
+#unpacking the tuple into variables
+(x,y,z)=myTuple5
+print(x)#this will print "apple"    
+print(y)#this will print "banana"
+print(z)#this will print "cherry"
+#the number of varibles must match the number of values in the tuple, otherwise,python will assign remaining values to the last variable as a list.thus remember to use asterisk * to assign the remaining values to the last variable as a list.
+myTuple6=("apple","banana","cherry","date","elderberry")
+(x,y,*z)=myTuple6
+print(x)#this will print "apple"    
+print(y)#this will print "banana"
+print(z)#this will print the remaining values as a list ["cherry","date","elderberry"]
+
+#Looping through a tuple: you can loop through the tuple items by using a for loop.
+myTuple7=("apple","banana","cherry")
+for i in myTuple7:
+    print(i)#this will print each item in the tuple on a new line 
+#Looping using a range() function: you can also loop through the tuple items by using a for loop and the range() function.  
+myFruits=("apple","banana","cherry")
+for i in range(len(myFruits)):
+    print(myFruits[i])#this will print each item in the tuple on a new line using the index of the items
+-----------------------------------------------------"""
+
+#Now, we are going to see how to use sets in python, sets are used to store multiple items in a single variable, they are unordered, unchangeable, and do not allow duplicate values. Sets are written with curly brackets {}.
+mySet={"laptop","phone","TV","laptop"} #this set has duplicate values, but it will only store unique values.
+print(mySet)#this will print the set with unique values only, thus it will print {'TV', 'laptop', 'phone'} because the duplicate value "laptop" is removed.
