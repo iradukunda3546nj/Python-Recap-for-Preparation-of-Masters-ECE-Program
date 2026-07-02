@@ -357,8 +357,98 @@ for i in myTuple7:
 myFruits=("apple","banana","cherry")
 for i in range(len(myFruits)):
     print(myFruits[i])#this will print each item in the tuple on a new line using the index of the items
------------------------------------------------------"""
+-----------------------------------------------------
 
 #Now, we are going to see how to use sets in python, sets are used to store multiple items in a single variable, they are unordered, unchangeable, and do not allow duplicate values. Sets are written with curly brackets {}.
 mySet={"laptop","phone","TV","laptop"} #this set has duplicate values, but it will only store unique values.
 print(mySet)#this will print the set with unique values only, thus it will print {'TV', 'laptop', 'phone'} because the duplicate value "laptop" is removed.
+#onc the set is created, you cannot change its items, but you can add new items to the set using the add() method.
+mySet.add("tablet")#this will add the new item "tablet" to the set
+print(mySet)#this will print the updated set with the new item "tablet"
+#To add items from another set into the current set, you can use the update() method.
+mySet1={"laptop","phone","TVx"}
+mySet.update(mySet1)#this will add the items from mySet1 to mySet
+print(mySet)#this will print the updated set with the new items from mySet1
+#with update() method, you can add any iterable object (list, tuple, dictionary) to the set.
+mySet2=["camera","printer"]
+mySet.update(mySet2)#this will add the items from mySet2 to mySet
+print(mySet)#this will print the updated set with the new items from mySet2
+
+#for removing items from a set, you can use the remove() or discard() method. The difference between the two is that remove() will raise an error if the item does not exist, while discard() will not raise an error.
+mySet.remove("phone")#this will remove the item "phone" from the set
+mySet.discard("TV")#this will remove the item "TV" from the set
+print(mySet)#this will print the updated set with the item "phone" removed
+#you can also use the pop() method to remove a random item from the set, since sets are unordered.
+mySet.pop()#this will remove a random item from the set
+
+#Looping through a set: you can loop through the set items by using a for loop.
+mySet3={"laptop","phone","TV"}
+for i in mySet3:
+    print(i)#this will print each item in the set on a new line
+#for in range(len(mySet3)):
+    #print(mySet3[i])#this will raise an error because sets do not support indexing, thus you cannot access items in a set by index.
+#joining two sets: you can join two sets by using union()/update(), intersection(), difference(), symmetric_difference() methods.
+setA={"laptop","phone","TV"}
+setB={"tablet","TV","printer"}
+setC=setA.union(setB)#this will join the two sets and store the result in setC
+print(setC)#this will print the joined set  
+setD=setA.intersection(setB)#this will return the common items in both sets, 
+print(setD)#this will print the common items in both sets
+setE=setA.difference(setB)#this will return the items that are in setA but not in setB
+print(setE)#this will print the items that are in setA but not in setB
+#tips to join multiple sets: you can join multiple sets by using the union() method or the update() method.
+setF={"laptop","phone","TV"}
+setG=setA.union(setB,setF)#this will join the three sets and store the result in setG
+print(setG)#this will print the joined set
+#or we can use | operator to join multiple sets
+setH=setA|setB|setF#this will join the three sets and store the result in setH
+print(setH)#this will print the joined set  
+---------------------------------------------------------"""
+#Now, we are going to see how to use dictionaries in python, dictionaries are used to store data values in key:value pairs, they are unordered, changeable, and do not allow duplicate keys. Dictionaries are written with curly brackets {}.   
+thisDict={
+    
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(thisDict)#this will print the dictionary with the key:value pairs
+print(thisDict["year"])#this will print the value of the key "year" in the dictionary
+#using the get() method to access the value of a key in the dictionary
+print(thisDict.get("model"))#this will print the value of the key "model"
+print(thisDict.keys())#this will print all the keys in the dictionary
+thisDict["color"]="red"#this will add a new key:value pair to the dictionary
+print(thisDict)#this will print the updated dictionary with the new key:value pair
+print(thisDict["color"])#this will print the value of the key "color"
+thisDict["year"]=2020#this will change the value of the key "year" in the dictionary
+print(thisDict)#this will print the updated dictionary with the changed value of the key "year"
+thisDict["taxable"]=True#this will add a new key:value pair to the dictionary
+print(thisDict)#this will print the updated dictionary with the new key:value pair
+
+#removing items from a dictionary: you can remove items from a dictionary by using the pop() method, popitem() method, or the del keyword.
+thisDict.pop("model")#this will remove the key:value pair with the key "model" from the dictionary
+print(thisDict)#this will print the updated dictionary with the key:value pair removed
+#we can also use del keyword to remove a key:value pair from the dictionary
+del thisDict["taxable"]#this will remove the key:value pair with the key "taxable" from the dictionary
+print(thisDict)#this will print the updated dictionary with the key:value pair removed
+
+#pay attention when using del keyword to remove a key:value pair from the dictionary, if you use del thisDict, it will delete the entire dictionary and you will not be able to access it anymore.  
+#del thisDict#this will delete the entire dictionary
+#we can also use the clear() method to remove all items from the dictionary, but it will not delete the dictionary itself.
+#thisDict.clear()#this will remove all items from the dictionary
+
+#Looping through a dictionary: you can loop through the dictionary items by using a for loop.
+
+for i,y in thisDict.items():
+    print(i,y)#this will print all the keys and values in the dictionary
+
+for i in thisDict.keys():
+    print(i)#this will print all the keys in the dictionary
+
+for i in thisDict.values():
+    print(i)#this will print all the values in the dictionary
+##copying a dictionary: you can copy a dictionary by using the copy() method or the dict() function.
+newDict=thisDict.copy()#this will create a copy of the dictionary
+print(newDict)#this will print the copied dictionary
+#copying a dictionary using the dict() function
+newDict1=dict(thisDict)#this will create a copy of the dictionary
+print(newDict1)#this will print the copied dictionary
