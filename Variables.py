@@ -156,7 +156,7 @@ print(f" I am {age} years old and my weight is {calweight:.2f} kg") #this is kno
 
 -----------------------------------------------------------------------------------
 
-#escape characters :are used to insert characters that are illegal in a string, for example, if you want to insert a double quote in a string that is defined by double quotes, you can use the escape character \ to escape the double quote.
+#escape characters :are used to insert characters that are illegal in a string, for example, if you want to insert a double quote in a string that is defined by double quotes, you can use the escape character \\ to escape the double quote.
 y="we are learning \"python\" programming to enhance our programming skills."
 print(y) #this will print the string y with the double quotes around the word "python"
 print(y.count("python")) #this will count the number of times the word "python" appears in the string y
@@ -403,7 +403,7 @@ print(setG)#this will print the joined set
 #or we can use | operator to join multiple sets
 setH=setA|setB|setF#this will join the three sets and store the result in setH
 print(setH)#this will print the joined set  
----------------------------------------------------------"""
+---------------------------------------------------------
 #Now, we are going to see how to use dictionaries in python, dictionaries are used to store data values in key:value pairs, they are unordered, changeable, and do not allow duplicate keys. Dictionaries are written with curly brackets {}.   
 thisDict={
     
@@ -452,3 +452,207 @@ print(newDict)#this will print the copied dictionary
 #copying a dictionary using the dict() function
 newDict1=dict(thisDict)#this will create a copy of the dictionary
 print(newDict1)#this will print the copied dictionary
+#Nested dictionaries: you can create a nested dictionary by using a dictionary inside another dictionary.
+myFamily={
+    "child1":{
+        
+        "name":"Emmanuel",
+        "year":2004
+    },
+    "child2":{
+        
+        "name":"Amina",
+        "year":2006
+    }
+}
+print(myFamily)#this will print the nested dictionary
+print(myFamily["child1"]["year"])
+
+#trying my own example of nested dictionary, let's say we have a collection of nodes with their respective sensor data, we can create a nested dictionary to store this information.
+nodesCol={
+    "sensor1":{
+        "name":"temperature","value":25.5
+    },
+    "sensor2":{
+        "name":"humidity","value":60
+    },
+    "sensor3":{
+        "name":"pressure","value":1013
+    }
+}
+print(nodesCol["sensor1"]["value"])
+----------------------------------------------------------
+allowedToVote=True
+print("You are allowed to vote" if allowedToVote else "You are not allowed to vote")
+#Using logic operators in python, we can use the and, or, not operators to combine conditional statements.
+hasID=True
+isCitizen=True
+age=20
+if hasID and isCitizen and age>=18:
+    print("You are allowed to vote")
+else:
+    print("You are not allowed to vote")
+
+#using match statement in python, match statement is used to compare a value against a series of patterns and execute the corresponding block of code. It is similar to switch statement in other programming languages.
+day=int(input("Enter a number between 1 and 7 to represent the day of the week: "))
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thursday")
+    case 5:
+        print("Friday")
+    case 6:
+        print("Saturday")
+    case 7:
+        print("Sunday")
+    case _:
+        print("Invalid input, please enter a number between 1 and 7")
+
+#second example of match statement
+name=str(input("Enter your name: "))
+match name:
+    case "Emmanuel":
+        print("Hello Emmanuel, welcome to the python programming world")
+    case "Amina":
+        print("Hello Amina, welcome to the python programming world")
+    case "Jean":
+        print("Hello Jean, welcome to the python programming world")
+    case _:
+        print("Hello stranger, welcome to the python programming world")
+---------------------------------------------------------------------------
+#Understanding the range() function
+#range(n) function generates a sequence of numbers from 0 to n-1, it is commonly used in for loops to iterate over a sequence of numbers.
+#range(start, stop, step) function generates a sequence of numbers from start to stop-1, with a step value of step. The default value of start is 0 and the default value of step is 1.
+for i in range(2,20,2):#this will print the even numbers from 2 to 18
+    print(i) #it prints 2,4.....................,18
+------------------------------------------------------------------------
+
+#Lambda function: a lambda function is a small anonymous function that can take any number of arguments, but can only have one expression. It is commonly used as a shortcut for defining simple functions.
+x=lambda a,c: a+c
+print(x(5,10))#this will print 15
+--------------------------------------------------------------
+import myModule as nm   #learning how to import a module in python, we can use the import statement to import a module and use its functions and variables in our code. We can also use the as keyword to give the module a different name, which is useful when the module name is long or when we want to avoid naming conflicts with other modules.
+import platform
+x=nm.myCredentials["name"]
+y=nm.myCredentials["age"]
+print(f"My name is {x} and I am {y} years old.")
+print(f"My operating system is {platform.system()} and its version is {platform.version()}.")
+x=dir(platform)#this will print all the attributes and methods of the platform module
+print(x)
+--------------------------------------------------------
+#importing from module, we can use the from keyword to import specific functions or variables from a module, instead of importing the entire module. This is useful when we only need to use a few functions or variables from a module, and it can also help to reduce memory usage and improve performance.
+from myModule import greeting
+greeting("Jean Clever") #this will print "Hello, Jean Clever"
+
+from myModule import person1
+print(f"My name is {person1['name']}, I am {person1['age']} years old, and I live in {person1['country']}.")
+
+---------------------------------------------------------------
+import datetime
+x=datetime.datetime.now()
+print(x)
+print(x.year)
+print(x.strftime("%A")) #this will print the day of the week
+
+-------------------------------------------------------------------
+
+#Bu using the math built-in module, we can perform mathematical operations in python. The math module provides a wide range of mathematical functions and constants, such as trigonometric functions, logarithmic functions, and constants like pi and e. We can use the import statement to import the math module and use its functions in our code.
+import math
+#we can use functions such as ceil,floor,pow,abs,sqrt,factorial,log,log10,log2,sin,cos,tan,asin,acos,atan,degrees,radians,pi,e
+x=math.ceil(4.7)#this will round the number 4.7 up to the nearest integer, which is 5
+y=math.floor(4.7)#this will round the number 4.7 down to the nearest integer, which is 4
+z=math.pow(2,3)#this will calculate 2 raised to the power of 3, which is 8.0
+a=math.sqrt(16)#this will calculate the square root of 16, which is 4.0
+b=math.factorial(5)#this will calculate the factorial of 5, which is 120
+c=math.log(100,10)#this will calculate the logarithm of 100 to the base 10, which is 2.0
+d=math.log10(1000)#this will calculate the logarithm of 1000 to the base 10, which is 3.0
+e=math.log2(8)#this will calculate the logarithm of 8 to the  base 2, which is 3.0
+f=math.sin(math.radians(30))#this will calculate the sine of 30 degrees, which is 0.5
+g=math.cos(math.radians(60))#this will calculate the cosine of 60   degrees, which is 0.5
+h=math.tan(math.radians(45))#this will calculate the tangent of 45 degrees, which is 1.0
+i=math.asin(0.5)#this will calculate the arcsine of 0.5, which is 30.0 degrees
+j=math.acos(0.5)#this will calculate the arccosine of   0.5, which is 60.0 degrees
+k=math.atan(1)#this will calculate the arctangent of 1, which   is 45.0 degrees
+--------------------------------------------------------------------------------
+#JSON: JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write, and easy for machines to parse and generate. In Python, we can use the built-in json module to work with JSON data. We can use the json.dumps() method to convert a Python object into a JSON string, and the json.loads() method to convert a JSON string into a Python object.
+
+#I have realized that we can convert a plain text into a json equivalent and keep in mind that we use key-pairs style just as for dictionary, and note that all keys and strings must be enclosed in double quotes, and the values can be of any data type, including numbers, strings, lists, and other JSON objects.
+#e.f
+
+a='''"John Doe is a 28-year-old software engineer living in New York. He is currently employed 
+full-time and has two primary skills: Python and JavaScript.'''
+ 
+b={
+  "name": "John Doe",
+  "age": 28,
+  "occupation": "Software Engineer",
+  "location": "New York",
+  "isFullTime": true,
+  "skills": [
+    "Python",
+    "JavaScript"
+  ]
+}
+
+#Observation: b is a json equivalent of a, and we can use the json.dumps() method to convert b into a json string, and the json.loads() method to convert a json string into a python object.
+
+---------------------------------------------------------------------------
+#we can convert a json into a python (resulting into a dictionary) using the json.loads() method, and we can convert a python object into a json string using the json.dumps() method.
+import json
+b={
+  "name": "John Doe",
+  "age": 28,
+  "occupation": "Software Engineer",
+  "location": "New York",
+  "isFullTime": True,
+  "skills": [
+    "Python",
+    "JavaScript"
+  ]
+}
+json_string = json.dumps(b)  # convert the dict into a JSON string
+x = json.loads(json_string)  # convert the JSON string back into a Python dict
+print(x["skills"])  # this will print the python object (dictionary)
+print(json_string)  # this will print the JSON string
+-------------------------------------------------------------------
+#Using Try,except,finally statements in python //simply saying: teh except section is executed when try section raises an error, and the finally section is executed regardless of whether an error occurred or not.
+x=0
+try:
+    y=10/x
+    print(y)
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+finally:
+    print("This block is always executed.")
+---------------------------------------------------------------------------------
+#Use of raise statement in python, we can use the raise statement to raise an exception when a certain condition is met. This is useful when we want to enforce certain rules or constraints in our code.
+def check_age(age):
+    if age < 18:
+        raise ValueError("Age must be at least 18.")
+    else:
+        print("Age is valid.") 
+
+check_age(2)  # this will print ValueError: Age must be at least 18.
+
+---------------------------------------------------------------------------------------
+#File handling in python, we can use the open() function to open a file and perform various operations on it, such as reading, writing, and appending. We can also use the with statement to automatically close the file after we are done with it.
+f=open(r"C:\Users\CMU_Loaner 207\Downloads\test.txt","a")  # open a file in append mode
+f.write("\nNow the file has been updated.")  # write to the file
+x=open(r"C:\Users\CMU_Loaner 207\Downloads\test.txt","r")  # open the file in read mode
+print(x.read())  # read the contents of the file
+
+#the open() function takes two arguments: the file path and the mode. The mode can be "r" for read, "w" for write, "a" for append, and "x" for exclusive creation. We can also use "b" for binary mode and "+" for read and write mode.
+
+-------------------------------------------------------------------
+#we can also delete a file using the os module, we can use the os.remove() method to delete a file. We can also use the os.rmdir() method to delete an empty directory, and the shutil.rmtree() method to delete a directory and all its contents.
+import os   
+os.remove(r"C:\Users\CMU_Loaner 207\Downloads\test.txt")  # delete the file
+----------------------------------------------------------"""
+d = {"a": 1, "b": 2} #example from canvas quiz
+x= d.get("c", 0)
+print(x)#this will print 0 because the key "c" does not exist in the dictionary, and we have provided a default value of 0 to return when the key is not found.
