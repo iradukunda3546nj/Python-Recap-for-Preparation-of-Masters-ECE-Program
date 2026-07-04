@@ -7,13 +7,13 @@ def apply_transform(dataset, M):
 
     for point in dataset:
 
-        x = point["x"] #getting values of x,y fro every dictionary.
+        x = point["x"] #getting original values of x,y from every dictionary.
         y = point["y"]
 
-        new_x = M[0][0] * x + M[0][1] * y
+        new_x = M[0][0] * x + M[0][1] * y  #getting the new values by multiplying the original values with matrix M
         new_y = M[1][0] * x + M[1][1] * y
 
-        new_point = {     #Computing new Dict
+        new_point = {     # new Dict containing the transformed values
             "x": new_x,
             "y": new_y
         }
