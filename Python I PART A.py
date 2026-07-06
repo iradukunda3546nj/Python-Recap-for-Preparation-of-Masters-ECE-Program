@@ -46,3 +46,4 @@ def vector_length(v):
     return length
 v=[3,4]
 print(f"The magnatude of vector {v} is {vector_length(v)} ")
+
